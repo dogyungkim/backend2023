@@ -1,0 +1,17 @@
+# ignore for Mac file
+.DS_Store
+
+
+## To ignore binary files
+# Ignore all
+*
+# Unignore all with extensions
+!*.*
+# Unignore all dirs
+!*/
+
+#Other
+.vscode/
+__pycache__/
+
+

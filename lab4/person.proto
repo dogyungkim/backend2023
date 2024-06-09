@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package mju;
+//field 이름 뒤에 숫자는 binary로 serialize/deserialize 될 때 내부적으로 field 번호로 쓰임
+//자주 쓰는 것을 낮은 숫자로
+
+message Person {
+	required string name = 1; // required = 절대 안 바뀜
+    optional int32 id = 2; // 관례적으로 붙임, 삭제되더라도 영향이 없다
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+    }
+
+    message PhoneNumber {
+        optional string number = 1;
+        optional PhoneType type = 2 [default = HOME];
+    }
+
+    repeated PhoneNumber phones = 4; // 배열형태라면 repeated
+     
+}
